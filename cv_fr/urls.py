@@ -25,7 +25,10 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+import profiles.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', profiles.views.home, name = 'home')
     #views라는 파일이 있음을 알아야함으로 import해줘야한다.
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
